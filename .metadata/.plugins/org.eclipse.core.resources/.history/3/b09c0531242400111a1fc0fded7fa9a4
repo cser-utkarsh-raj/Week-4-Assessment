@@ -1,0 +1,54 @@
+package com.capgemini.controller;
+
+import java.util.*;
+
+@RestController
+@RequestMapping("/books")
+public class BookController {
+
+    @Autowired
+    private BookService service;
+
+    // ✅ ADD
+    @PostMapping
+    public Map<String, String> addBook(@RequestBody Book book) {
+        return service.addBook(book);
+    }
+
+    // ✅ GET BY ID
+    @GetMapping("/{id}")
+    public Object getBook(@PathVariable Integer id) {
+        return service.getBookById(id);
+    }
+
+    // ✅ GET ALL
+    @GetMapping
+    public List<Book> getAll() {
+        return service.getAllBooks();
+    }
+
+    // ✅ UPDATE
+    @PutMapping("/{id}")
+    public Map<String, String> update(@PathVariable Integer id,
+                                      @RequestBody Book book) {
+        return service.updateBook(id, book);
+    }
+
+    // ✅ DELETE
+    @DeleteMapping("/{id}")
+    public Map<String, String> delete(@PathVariable Integer id) {
+        return service.deleteBook(id);
+    }
+
+    // 🔥 BORROW
+    @PostMapping("/borrow/{id}")
+    public Map<String, String> borrow(@PathVariable Integer id) {
+        return service.borrowBook(id);
+    }
+
+    // 🔥 RETURN
+    @PostMapping("/return/{id}")
+    public Map<String, String> returnBook(@PathVariable Integer id) {
+        return service.returnBook(id);
+    }
+}

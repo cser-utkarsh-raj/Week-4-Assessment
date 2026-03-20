@@ -1,0 +1,21 @@
+package com.capgemini.model.entity;
+
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "books")  
+public class Book {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+
+    private String title;
+    private String author;
+    private Integer availableCopies;
+    private Integer borrowedCopies;
+
+    public Book() {}
+
+    // getters & setters
+}

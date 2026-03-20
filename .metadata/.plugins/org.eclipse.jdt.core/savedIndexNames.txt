@@ -1,0 +1,5 @@
+INDEX VERSION 1.134+D:\ct2\Assesmet 4 hoga\.metadata\.plugins\org.eclipse.jdt.core
+1865797976.index
+2377331657.index
+1158624174.index
+879577852.index
